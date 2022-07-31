@@ -1,0 +1,32 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.2'
+	id 'io.spring.dependency-management' version '1.0.12.RELEASE'
+	id 'java'
+}
+
+group = 'Connect4Backend'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+
+	//hibernate
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+	//liquibase
+	implementation 'org.liquibase:liquibase-core:4.14.0'
+
+	//postgres jdbc driver
+	implementation 'org.postgresql:postgresql:42.4.0'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
