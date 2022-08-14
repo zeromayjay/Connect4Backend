@@ -11,33 +11,36 @@
         <sql dbms="postgresql">
             CREATE SCHEMA game
         </sql>
+
         <createTable tableName="game">
-            <column name="gameId" type="uuid">
+            <column name="game_id" type="uuid">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="gameBoard" type="jsonb">
+            <column name="game_board" type="varchar(100)">
             </column>
-            <column name="gameState" type="varchar(100)"></column>
-            <column name="session" type="uuid">
-                <constraints foreignKeyName="fk_game_session" referencedColumnNames="sessionId"/>
-            </column>
+            <column name="game_state" type="varchar(100)"></column>
         </createTable>
+
         <createTable tableName="session">
-            <column name="sessionId" type="uuid">
+            <column name="session_id" type="uuid">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="playerRed" type="uuid">
+            <column name="player_red" type="uuid">
             </column>
-            <column name="playerYellow" type="uuid">
+            <column name="player_yellow" type="uuid">
             </column>
-            <column name="lastPolledRed" type="timestamp with time zone">
+            <column name="last_polled_red" type="timestamp with time zone">
             </column>
-            <column name="lastPolledYellow" type="timestamp with time zone">
+            <column name="last_polled_yellow" type="timestamp with time zone">
+            </column>
+            <column name="game" type="uuid">
+                <constraints foreignKeyName="fk_session" referencedColumnNames="gameId"/>
             </column>
         </createTable>
-        <addForeignKeyConstraint baseTableName="game" baseColumnNames="session" constraintName="fk_game"
-                                 referencedTableName="session"
-                                 referencedColumnNames="sessionId"/>
+
+        <addForeignKeyConstraint baseTableName="session" baseColumnNames="game" constraintName="fk_session"
+                                 referencedTableName="game"
+                                 referencedColumnNames="game_id"/>
     </changeSet>
 
 </databaseChangeLog>

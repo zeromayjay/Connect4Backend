@@ -1,4 +1,4 @@
-package Connect4Backend.Connect4Backend;
+package Connect4Backend;
 //hello
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

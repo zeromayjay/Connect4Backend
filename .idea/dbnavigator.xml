@@ -36,11 +36,18 @@
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="12ebc61c-3387-457f-90ba-e595b1e7a40e" object-ref="schemas/game/tables/game" />
+      <object connection-id="12ebc61c-3387-457f-90ba-e595b1e7a40e" object-ref="schemas/game/tables/session" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="12ebc61c-3387-457f-90ba-e595b1e7a40e" />
     <connection id="9ba42107-ae1e-42cc-a143-6732e1bb8e4a" />
+  </component>
+  <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="12ebc61c-3387-457f-90ba-e595b1e7a40e" dataset="game.session" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="12ebc61c-3387-457f-90ba-e595b1e7a40e" dataset="game.game" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
@@ -113,7 +120,7 @@
           <session-management value="true" />
           <ddl-file-binding value="true" />
           <database-logging value="true" />
-          <connect-automatically value="true" />
+          <connect-automatically value="false" />
           <restore-workspace value="true" />
           <restore-workspace-deep value="false" />
           <environment-type value="default" />
@@ -280,6 +287,7 @@
         <object-type name="FUNCTION" sorting-type="NAME" />
         <object-type name="PROCEDURE" sorting-type="NAME" />
         <object-type name="ARGUMENT" sorting-type="POSITION" />
+        <object-type name="TYPE ATTRIBUTE" sorting-type="POSITION" />
       </sorting>
       <default-editors>
         <object-type name="VIEW" editor-type="SELECTION" />
